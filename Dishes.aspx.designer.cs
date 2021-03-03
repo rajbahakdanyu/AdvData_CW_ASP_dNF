@@ -10,7 +10,7 @@
 
 namespace AdvData_CW_ASP_dNF
 {
-    public partial class About
+    public partial class Dishes
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace AdvData_CW_ASP_dNF
 {
-    public partial class About : Page
+    public partial class Delivery : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
