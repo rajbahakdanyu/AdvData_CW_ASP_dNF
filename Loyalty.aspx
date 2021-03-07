@@ -1,13 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Loyalty.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Loyalty" %>
+﻿<%@ Page Title="Loyalty Points " MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Loyalty.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Loyalty" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <div>
             <asp:Label ID="lbTitle" runat="server" Font-Size="XX-Large" Text="Loyalty Points"></asp:Label>
 
@@ -87,6 +80,4 @@
             </asp:GridView>
             </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

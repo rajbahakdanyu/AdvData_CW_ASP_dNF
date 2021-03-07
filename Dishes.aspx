@@ -1,14 +1,6 @@
-﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dishes.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Dishes" %>
+﻿ <%@ Page Title="Dishes" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Dishes.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Dishes" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Dishes</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <div>
             <asp:Label ID="lbTitle" runat="server" Font-Size="XX-Large" Text="Dishes"></asp:Label>
 
@@ -58,6 +50,4 @@
             </asp:GridView>
             </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

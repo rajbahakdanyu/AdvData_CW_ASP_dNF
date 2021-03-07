@@ -1,15 +1,19 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Order Detail.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Order_Detail" %>
+﻿<%@ Page Title="Order Details" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Order Detail.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Order_Detail" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+        <div>            
+            <asp:Label ID="lbTitle" runat="server" Font-Size="XX-Large" Text="Order Details"></asp:Label>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Order Detail</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+            <table>
+                <tr>
+                    <td>
+                        <asp:Label ID="lbName" runat="server" Text="Customer Name"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlName" runat="server" DataSourceID="SqlDataSource1" DataTextField="CUSTOMER_NAME" DataValueField="CUSTOMER_ID"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT &quot;CUSTOMER_ID&quot;, &quot;CUSTOMER_NAME&quot; FROM &quot;CUSTOMER&quot;"></asp:SqlDataSource>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

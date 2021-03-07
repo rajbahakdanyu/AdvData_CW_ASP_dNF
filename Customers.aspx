@@ -1,13 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Customers.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Customers" %>
+﻿<%@ Page Title="Customers"  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Customers.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Customers" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Customers</title>
-</head>
-<body>
-    <form id="form1" runat="server">
         <div>
             <asp:Label ID="lbTitle" runat="server" Font-Size="XX-Large" Text="Customers"></asp:Label>
 
@@ -73,6 +67,5 @@
             </asp:GridView>
             </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+

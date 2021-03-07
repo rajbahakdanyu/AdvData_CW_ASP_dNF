@@ -1,15 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Order Activity.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Order_Activity" %>
+﻿<%@ Page Title="Order Activity" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Order Activity.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Order_Activity" %>
 
-<!DOCTYPE html>
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+        <div>            
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Order Activity</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+
