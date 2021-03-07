@@ -14,6 +14,16 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT &quot;CUSTOMER_ID&quot;, &quot;CUSTOMER_NAME&quot; FROM &quot;CUSTOMER&quot;"></asp:SqlDataSource>
                     </td>
                 </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                    </td>
+                </tr>
             </table>
+            <hr>            
+            <div>
+                <asp:GridView ID="GridView1" runat="server" EmptyDataText="No records has been added."></asp:GridView>
+            </div>
         </div>
 </asp:Content>

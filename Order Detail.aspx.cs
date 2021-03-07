@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,5 +16,38 @@ namespace AdvData_CW_ASP_dNF
         {
 
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(ddlName.SelectedIndex.ToString());
+
+            String queryString = @"SELECT 
+                                    ord.date_time, dh.dish, od.order_unit, rd.price, r.restaurant, d.longitude, d.latitude, d.description
+                                    FROM orders ord
+                                    JOIN orderdetail od on od.order_no = ord.order_no
+                                    JOIN restaurantdish rd on rd.restaurant_dish_id = od.restaurant_dish_id
+                                    JOIN dish dh on dh.dish_id = rd.dish_id
+                                    JOIN restaurant r on r.restaurant_id = rd.restaurant_id
+                                    JOIN delivery d on d.delivery_id = ord.delivery_id
+                                    WHERE ord.customer_id = " + id;
+
+            String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            OracleCommand cmd = new OracleCommand();
+            OracleConnection con = new OracleConnection(connectionString);
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = queryString;
+            cmd.CommandType = CommandType.Text;
+            DataTable dt = new DataTable();
+            using (OracleDataReader sdr = cmd.ExecuteReader())
+            {
+                dt.Load(sdr);
+            }
+            con.Close();
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+        }
+
     }
 }
