@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>packages\Oracle.ManagedDataAccess.19.10.1\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -108,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="calendar.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -116,6 +120,7 @@
     <Content Include="Customers.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Delivery.aspx" />
+    <Content Include="Dish Search.aspx" />
     <Content Include="Dishes.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -129,6 +134,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Loyalty.aspx" />
+    <Content Include="Order Activity.aspx" />
+    <Content Include="Order Detail.aspx" />
     <Content Include="README.md" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Restaurants.aspx" />
@@ -190,6 +197,13 @@
     <Compile Include="Delivery.aspx.designer.cs">
       <DependentUpon>Delivery.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dish Search.aspx.cs">
+      <DependentUpon>Dish Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dish Search.aspx.designer.cs">
+      <DependentUpon>Dish Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dishes.aspx.cs">
       <DependentUpon>Dishes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,6 +220,20 @@
     </Compile>
     <Compile Include="Loyalty.aspx.designer.cs">
       <DependentUpon>Loyalty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order Activity.aspx.cs">
+      <DependentUpon>Order Activity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order Activity.aspx.designer.cs">
+      <DependentUpon>Order Activity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order Detail.aspx.cs">
+      <DependentUpon>Order Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order Detail.aspx.designer.cs">
+      <DependentUpon>Order Detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurants.aspx.cs">
