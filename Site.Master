@@ -49,13 +49,28 @@
                     <a class="navbar-brand" runat="server" href="~/">Good Food</a>
                 </div>
                 <div class="navbar-collapse collapse">
+   
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Customers">Customers</a></li>
-                        <li><a runat="server" href="~/Restaurants">Restaurants</a></li>
-                        <li><a runat="server" href="~/Dishes">Dishes</a></li>
-                        <li><a runat="server" href="~/Loyalty">Loyalty Points</a></li>
-                        <li><a runat="server" href="~/Delivery">Delivery</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Basic Form
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" runat="server" href="~/Customers">Customers</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Restaurants">Restaurants</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Dishes">Dishes</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Loyalty">Loyalty Points</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Delivery">Delivery</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Complex Form
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" runat="server" href="~/Order Detail">Customer-Order Details</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Order Activity">Order Activity</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Dish Search">Dish Search</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
