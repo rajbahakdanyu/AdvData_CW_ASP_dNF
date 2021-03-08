@@ -19,7 +19,7 @@ namespace AdvData_CW_ASP_dNF
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(ddlName.SelectedIndex.ToString());
+            int id = Int32.Parse(ddlName.SelectedValue.ToString());
 
             String queryString = @"SELECT 
                                     ord.date_time, dh.dish, od.order_unit, rd.price, r.restaurant, d.longitude, d.latitude, d.description
