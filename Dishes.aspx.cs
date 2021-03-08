@@ -55,7 +55,7 @@ namespace AdvData_CW_ASP_dNF
             String name = txtName.Text.ToString();
             String description = txtDescription.Text.ToString();
 
-            String queryString = $"insert into dish(dish_id, name, description) values ({id},'{name}','{description}')";
+            String queryString = $"INSERT INTO dish (dish_id, dish, description) VALUES ({id} , '{name}', '{description}')";
 
             String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
@@ -88,7 +88,7 @@ namespace AdvData_CW_ASP_dNF
             string Name = (row.Cells[2].Controls[0] as TextBox).Text;
             string Description = (row.Cells[3].Controls[0] as TextBox).Text;
 
-            string queryString = $"update dish set Name = '{Name}', Description = '{Description}' where dish_id = {ID}";
+            string queryString = $"UPDATE dish SET dish = '{Name}', Description = '{Description}' where dish_id = {ID}";
 
             String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 

@@ -51,9 +51,9 @@ namespace AdvData_CW_ASP_dNF
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(txtId.Text);
-            int longi = Int32.Parse(txtLongitude.Text);
-            int lati = Int32.Parse(txtLatitude.Text);
+            int id = Int32.Parse(txtId.Text); 
+            decimal longi = decimal.Parse(txtLongitude.Text);
+            decimal lati = decimal.Parse(txtLatitude.Text);
             String description = txtDescription.Text.ToString();
 
             String queryString = $"INSERT INTO delivery (delivery_id, longitude, latitude, description) VALUES ({id} , {longi}, {lati}, '{description}')";
@@ -98,8 +98,8 @@ namespace AdvData_CW_ASP_dNF
         {
             GridViewRow row = GridView1.Rows[e.RowIndex];
             int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
-            int lati = Convert.ToInt32((row.Cells[2].Controls[0] as TextBox).Text);
-            int longi = Convert.ToInt32((row.Cells[3].Controls[0] as TextBox).Text);
+            decimal lati = decimal.Parse((row.Cells[2].Controls[0] as TextBox).Text);
+            decimal longi = decimal.Parse((row.Cells[3].Controls[0] as TextBox).Text);
             String description = (row.Cells[4].Controls[0] as TextBox).Text;
 
             string queryString = $"UPDATE delivery SET latitude = {lati}, longitude = {longi}, description = '{description}' WHERE delivery_id = {id}";
