@@ -118,7 +118,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Customers.aspx" />
-    <Content Include="Default.aspx" />
     <Content Include="Delivery.aspx" />
     <Content Include="Dish Search.aspx" />
     <Content Include="Dishes.aspx" />
@@ -182,13 +181,6 @@
     </Compile>
     <Compile Include="Customers.aspx.designer.cs">
       <DependentUpon>Customers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Delivery.aspx.cs">
       <DependentUpon>Delivery.aspx</DependentUpon>

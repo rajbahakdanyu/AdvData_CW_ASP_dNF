@@ -58,7 +58,7 @@ namespace AdvData_CW_ASP_dNF
             String start = txtStart.Text.ToString();
             String end = txtEnd.Text.ToString();
 
-            String queryString = $"INSERT INTO loyalty (loyalty_id, points, start_date, end_date) VALUES ({id} , {points}, TO_DATE('{start}', 'dd/mm/yyyy'), TO_DATE('{end}', 'dd/mm/yyyy'))";
+            String queryString = $"INSERT INTO loyalty (loyalty_id, loyalty_points, start_date, end_date) VALUES ({id} , {points}, TO_DATE('{start}', 'dd/mm/yyyy'), TO_DATE('{end}', 'dd/mm/yyyy'))";
 
             String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
@@ -104,7 +104,7 @@ namespace AdvData_CW_ASP_dNF
             String start = (row.Cells[3].Controls[0] as TextBox).Text;
             String end = (row.Cells[4].Controls[0] as TextBox).Text;
 
-            string queryString = $"UPDATE delivery SET loyalty_points = {points}, start_date = TO_DATE('{start}', 'dd/mm/yyyy'), end_date = TO_DATE('{end}', 'dd/mm/yyyy') WHERE loyalty_id = {id}";
+            string queryString = $"UPDATE loyalty SET loyalty_points = {points}, start_date = TO_DATE('{start}', 'dd/mm/yyyy HH:MI:SS AM'), end_date = TO_DATE('{end}', 'dd/mm/yyyy HH:MI:SS AM') WHERE loyalty_id = {id}";
 
             String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
