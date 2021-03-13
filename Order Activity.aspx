@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Order Activity" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Order Activity.aspx.cs" Inherits="AdvData_CW_ASP_dNF.Order_Activity" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-        <div>            
+        <div class="jumbotron">            
             <asp:Label ID="lbTitle" runat="server" Font-Size="XX-Large" Text="Order Details"></asp:Label>
 
             <table>
@@ -17,13 +17,13 @@
                 <tr>
                     <td></td>
                     <td>
-                        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                        <asp:Button class="btn btn-success" ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                     </td>
                 </tr>
             </table>
             <hr>            
             <div>
-                <asp:GridView ID="GridView1" runat="server" EmptyDataText="No records has been added."></asp:GridView>
+                <asp:GridView ID="GridView1" runat="server" EmptyDataText="No records has been added." CssClass="table table-striped table-dark"></asp:GridView>
             </div>
         </div>
 </asp:Content>
