@@ -50,8 +50,9 @@
 	        </button>
         </div>
 				<div class="p-4 pt-5">
-		  		<h1><a runat="server" href="~/Customers" class="logo">Good Food</a></h1>
+		  		<h1><a runat="server" href="~/Default" class="logo">Good Food</a></h1>
 	        <ul class="list-unstyled components mb-5">
+                <li><a runat="server" href="~/Default">Home</a></li>
                 <li><a runat="server" href="~/Customers">Customers</a></li>
                 <li><a runat="server" href="~/Restaurants">Restaurants</a></li>
                 <li><a runat="server" href="~/Dishes">Dishes</a></li>

@@ -15,21 +15,21 @@ namespace AdvData_CW_ASP_dNF
     {
 
         /// <summary>
-        /// Chart1 control.
+        /// lbTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart1;
+        protected global::System.Web.UI.WebControls.Label lbTitle;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }
