@@ -56,6 +56,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -117,7 +118,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="main.js" />
+    <Content Include="popper.js" />
+    <Content Include="style.css" />
     <Content Include="Customers.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Delivery.aspx" />
     <Content Include="Dish Search.aspx" />
     <Content Include="Dishes.aspx" />
@@ -181,6 +186,13 @@
     </Compile>
     <Compile Include="Customers.aspx.designer.cs">
       <DependentUpon>Customers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Delivery.aspx.cs">
       <DependentUpon>Delivery.aspx</DependentUpon>
