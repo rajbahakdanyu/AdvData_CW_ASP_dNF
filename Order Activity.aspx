@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <div class="jumbotron">            
-            <asp:Label ID="lbTitle" runat="server" Font-Size="XX-Large" Text="Order Details"></asp:Label>
+            <asp:Label ID="lbTitle" runat="server" Font-Size="XX-Large" Text="Order Activity"></asp:Label>
 
             <table>
                 <tr>

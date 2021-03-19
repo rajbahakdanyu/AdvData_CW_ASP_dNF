@@ -27,7 +27,7 @@ namespace AdvData_CW_ASP_dNF
             OracleConnection con = new OracleConnection(constr);
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM Customer";
+            cmd.CommandText = "SELECT * FROM Customer ORDER BY customer_id";
             cmd.CommandType = CommandType.Text;
             DataTable dt = new DataTable("customer");
             using (OracleDataReader sdr = cmd.ExecuteReader())
@@ -71,7 +71,7 @@ namespace AdvData_CW_ASP_dNF
                 }
                 catch (Exception ex)
                 {
-                    Console.Write(ex);
+                    Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
                 }
                 finally
                 {
@@ -118,7 +118,7 @@ namespace AdvData_CW_ASP_dNF
                 }
                 catch (Exception ex)
                 {
-                    Console.Write(ex);
+                    Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
                 }
                 finally
                 {
@@ -148,7 +148,7 @@ namespace AdvData_CW_ASP_dNF
                 }
                 catch (Exception ex)
                 {
-                    Console.Write(ex);
+                    Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
                 }
                 finally
                 {
