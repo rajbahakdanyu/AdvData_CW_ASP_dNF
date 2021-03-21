@@ -51,6 +51,7 @@ namespace AdvData_CW_ASP_dNF
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            try { 
             int id = Int32.Parse(txtId.Text);
             String name = txtName.Text.ToString();
             String address = txtAddress.Text.ToString();
@@ -79,6 +80,11 @@ namespace AdvData_CW_ASP_dNF
             }
 
             this.BindGrid();
+            }
+            catch (Exception ex)
+            {
+                Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
+            }
         }
 
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
@@ -95,6 +101,7 @@ namespace AdvData_CW_ASP_dNF
 
         protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            try { 
             GridViewRow row = GridView1.Rows[e.RowIndex];
             int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
             String name = (row.Cells[2].Controls[0] as TextBox).Text;
@@ -124,6 +131,11 @@ namespace AdvData_CW_ASP_dNF
 
             GridView1.EditIndex = -1;
             this.BindGrid();
+            }
+            catch (Exception ex)
+            {
+                Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
+            }
         }
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)

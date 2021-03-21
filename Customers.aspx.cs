@@ -51,36 +51,42 @@ namespace AdvData_CW_ASP_dNF
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(txtId.Text);
-            String name = txtName.Text.ToString();
-            String address = txtAddress.Text.ToString();
-            String phone = txtPhone.Text.ToString();
-            int points = Int32.Parse(txtPoints.Text);
+            try {
+                int id = Int32.Parse(txtId.Text);
+                String name = txtName.Text.ToString();
+                String address = txtAddress.Text.ToString();
+                String phone = txtPhone.Text.ToString();
+                int points = Int32.Parse(txtPoints.Text);
 
-            String queryString = $"INSERT INTO customer (customer_id, customer_name, phone, address, total_points) VALUES ({id} , '{name}', '{phone}', '{address}', {points})";
+                String queryString = $"INSERT INTO customer (customer_id, customer_name, phone, address, total_points) VALUES ({id} , '{name}', '{phone}', '{address}', {points})";
 
-            String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                String connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
-            using (OracleConnection conn = new OracleConnection(connectionString))
-            {
-                OracleCommand command = new OracleCommand(queryString, conn);
-                conn.Open();
-                try
+                using (OracleConnection conn = new OracleConnection(connectionString))
                 {
-                    command.ExecuteNonQuery();
+                    OracleCommand command = new OracleCommand(queryString, conn);
+                    conn.Open();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                        Clear();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
-                }
-                finally
-                {
-                    conn.Close();
-                    Clear();
-                }
+
+                this.BindGrid();
             }
-
-            this.BindGrid();
+            catch (Exception ex)
+            {
+                Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
+            }
         }
 
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
@@ -97,6 +103,7 @@ namespace AdvData_CW_ASP_dNF
 
         protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            try { 
             GridViewRow row = GridView1.Rows[e.RowIndex];
             int id = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
             String name = (row.Cells[2].Controls[0] as TextBox).Text;
@@ -128,6 +135,11 @@ namespace AdvData_CW_ASP_dNF
 
             GridView1.EditIndex = -1;
             this.BindGrid();
+            }
+            catch (Exception ex)
+            {
+                Response.Write($"<script language=javascript>alert('{ex.Message}')</script>");
+            }
         }
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
